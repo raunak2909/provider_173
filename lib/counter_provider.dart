@@ -2,13 +2,31 @@ import 'package:flutter/material.dart';
 
 class CounterProvider extends ChangeNotifier{
   //state
-  int _counter = 0;
+  //int _counter = 0;
+  List<Map<String, dynamic>> _arrData = [];
 
-  int getCountValue(){
-    return _counter;
+  void addTodo(Map<String, dynamic> newTask){
+    _arrData.add(newTask);
+    notifyListeners();
   }
 
-  //events
+  List<Map<String, dynamic>> get mData => _arrData;
+
+
+
+
+  /*set countValue(int value){
+    _counter = value;
+    notifyListeners();
+  }
+
+  int get countValue{
+    return _counter;
+  }*/
+
+
+
+  /*//events
   void incrementCounter() {
     _counter++;
     notifyListeners();
@@ -19,6 +37,7 @@ class CounterProvider extends ChangeNotifier{
       _counter--;
       notifyListeners();
     }
-  }
+
+  }*/
 
 }
